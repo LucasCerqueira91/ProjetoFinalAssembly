@@ -1,0 +1,81 @@
+﻿@model WebApiRecipe.Domain.Domain.User
+
+@{
+
+    ViewData["Title"] = "Add";
+
+    //@using (Html.BeginForm())
+    //{
+    //    @Html.TextBoxFor(m => m.Name)
+
+
+    //    <table id="Rating">
+    //        <tbody>
+
+    //            <!-- This here will display the Child Row for existing Rows in the Parent model -->
+    //            @foreach (var rating in Model.Recipes)
+    //            {
+    //                @rating.RatingList
+    //            }
+    //        </tbody>
+    //        }
+
+    //    </table>
+    //    <button type="button" id="addRating">Add Rating</button>
+
+    //    <button type="submit"> Save</button>
+
+}
+
+
+<h1>Add</h1>
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Save">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsBlocked" class="control-label"></label>
+                <input asp-for="IsBlocked" class="form-control" />
+                <span asp-validation-for="IsBlocked" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsAdmin" class="control-label"></label>
+                <input asp-for="IsAdmin" class="form-control" />
+                <span asp-validation-for="IsAdmin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
